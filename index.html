@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Command Executor</title>
+</head>
+<body>
+    <h1>Insert your long command</h1>
+    <form id="commandForm">
+        <textarea id="command" rows="4" cols="50" placeholder="Enter your command here"></textarea><br>
+        <button type="button" onclick="generateCode()">Generate Code</button>
+    </form>
+    <p id="output"></p>
+
+    <script>
+        function generateCode() {
+            const command = document.getElementById('command').value;
+            if (!command) {
+                alert('Please enter a command');
+                return;
+            }
+            const code = Math.random().toString(36).substring(2, 8);
+            document.getElementById('output').innerText = `Your code is: ${code}`;
+            // Выводим код, и дальше вы можете сохранить команду с кодом, например, вручную.
+        }
+    </script>
+</body>
+</html>
